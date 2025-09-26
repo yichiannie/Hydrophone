@@ -75,3 +75,4 @@ Build a functional and well-characterized analog front-end for underwater pinger
 3. What role does the AS-1 hydrophone play in the overall underwater robot system?  
    - This is important for determining whether I can further refine the LNA's sampling frequency range based on the system requirements.
 
+26/09/2025 updated
