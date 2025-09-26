@@ -1,5 +1,7 @@
 # Acoustic Communication Front-End: Hydrophone → LNA → Filter → ADC → FPGA
 
+**Author:** Yichi
+
 ## 1. Project Overview
 This project aims to design a **custom analog front-end** for the AS-1 hydrophone, replacing the off-the-shelf pre-amplifier, to acquire clean underwater acoustic signals and feed them to an FPGA for digital processing.
 
@@ -15,6 +17,7 @@ Build a functional and well-characterized analog front-end for underwater pinger
 ---
 
 ## 2. High-Level Block Diagram
+![block_diagram](https://github.com/user-attachments/assets/29b14894-06f8-434b-84aa-c018052a1f76)
 
 
 ---
@@ -27,9 +30,9 @@ Build a functional and well-characterized analog front-end for underwater pinger
   - Gained understanding of gain, bandwidth, and noise considerations in analog front-end design
 
 - **AS-1 Hydrophone Data Understanding:**  
-  - Analyzed the AS-1 hydrophone output characteristics (~40 µV/Pa)  
-  - Studied signal type, impedance, and frequency range  
-  - Identified key constraints for amplification and filtering stages
+  - Output ~40 µV/Pa, capacitive source (~5 nF)  
+  - Frequency range: 1 Hz – 100 kHz  
+  - Key constraints: low signal amplitude, input impedance matching, proper filtering
 
 - **LNA Circuit in LTSpice:** Currently in design and simulation  
   - Initial schematic drawn
@@ -59,14 +62,16 @@ Build a functional and well-characterized analog front-end for underwater pinger
    - Extremely small signal (~40 µV/Pa) is highly sensitive to noise  
    - Requires low-noise components and careful PCB design to minimize parasitics  
 
-3. **ADC & FPGA Interface**  
-   - Ensure anti-aliasing and proper signal amplitude  
-   - Multi-channel synchronization may be challenging in future phases  
-
 ---
 
 ## 5. Next Steps
 - Refine **LNA circuit in LTSpice** to resolve current transmission issue  
-- Design and simulate **filter stage**  
-- Define **ADC interface specification** for FPGA input  
+- Design and simulate **filter stage**   
 - Record simulation results and update block diagram if necessary
+
+## 6. Questions
+1. Is my current understanding of the project correct?  
+2. Is my current task limited to designing and simulating the LNA in LTSpice, and then creating a PCB in KiCad for testing?  
+3. What role does the AS-1 hydrophone play in the overall underwater robot system?  
+   - This is important for determining whether I can further refine the LNA's sampling frequency range based on the system requirements.
+
